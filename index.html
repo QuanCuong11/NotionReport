@@ -19,8 +19,9 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY });
   const response = await notion.databases.retrieve({ database_id: databaseId });
   console.log(response);
   
-  const databaseId2 = '626e88d7121441d2b569efa73988e6ba';
-  const response2 = await notion.databases.retrieve({ database_id: databaseId2 });
+  const response2 = await notion.databases.query({
+    database_id: databaseId
+  });
   console.log(response2);
 })();
 </script>
