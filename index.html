@@ -17,12 +17,16 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY });
 (async () => {
   const databaseId = '3734e2fb338b44ff84db1467c1113139';
   const response = await notion.databases.retrieve({ database_id: databaseId });
+  console.log('start1');
   console.log(response);
+  console.log('end1');
   
+  console.log('start2');
   const response2 = await notion.databases.query({
     database_id: databaseId
   });
   console.log(response2);
+  console.log('end2');
 })();
 </script>
  
